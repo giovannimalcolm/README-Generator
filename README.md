@@ -48,7 +48,7 @@ No special contribution instructions.
 To run tests, run the following command:
 
 ```
-Tests not applicable to this repo.
+Not applicable to this repo.
 ```
 
 ## Questions
