@@ -1,16 +1,17 @@
 // TODO: Include packages needed for this application
-
 const inquirer = require("inquirer");
 const fs = require("fs");
-const util = require('util');
+const utils = require("./utils/generateMarkdown");
 const generateMarkdown = require("./utils/generateMarkdown");
-fileName = 'README.md'
+const fileName = 'README.md';
+
 
 
 // TODO: Create an array of questions for user input
 
 const promptUser = () => {
-    return inquirer.prompt([
+    inquirer
+    .prompt([
       {
         type: 'input',
         name: 'username',
@@ -33,7 +34,7 @@ const promptUser = () => {
       },
       {
         type: 'checkbox',
-        name: 'License',
+        name: 'license',
         message: 'What kind of license should your project have?',
         choices: ['MIT','APACHE 2.0','GPL 3.0','BSD 3','None']
       },
@@ -59,9 +60,13 @@ const promptUser = () => {
       },
     ])
     .then((answers) => {
-        const readmeContent = generateMarkdown(data)
-        
-    });
+        console.log(answers.license)
+        writeToFile('README.md', generateMarkdown(answers))
+      })
+      .catch((err) => {
+        err ? console.error(err) : console.info(`Something went wrong`)
+
+        })
   };
 
 
@@ -71,7 +76,7 @@ const promptUser = () => {
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
-    err ? console.log(err) : console.log('Successfully created index.html!')
+    err ? console.log(err) : console.log('Successfully created a README!')
     );
 }
 
@@ -81,9 +86,6 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     promptUser()
-    .then((answers) => writeToFile('README.md', generateMarkdown(answers)))
-    .then(() => console.log('Successfully created a README!'))
-    .catch((err) => console.error(err));
 }
 
 // Function call to initialize app
