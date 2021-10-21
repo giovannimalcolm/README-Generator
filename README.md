@@ -6,6 +6,8 @@
 
 A simple application to allow users to quickly generate professional README files upon answering a series of command line prompts.
 
+![Screenshot]()
+
 ## Table of Contents
 
 * [Installation](#installation)
