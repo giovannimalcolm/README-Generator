@@ -1,5 +1,5 @@
 # README Generator
-  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)  
        https://opensource.org/licenses/MIT
 
   ## Description
@@ -30,7 +30,7 @@ npm i
 
 ## Usage
 
-Nothing
+No special usage instructions.
 
 ## License 
 
@@ -38,7 +38,7 @@ This project is licensed under the MIT license.
 
 ## Contributing 
 
-Nothing
+No special contribution instructions.
 
 ## Tests
 
@@ -51,4 +51,4 @@ npm test
 ## Questions
 
 If you have any questions about the repo, open an issue or contact me directly at malcolm.giovanni@gmail.com. 
-You can find more of my work at ![giovannimalcolm](https://github.com/giovannimalcolm/).
+You can find more of my work at my GitHub page, [giovannimalcolm](https://github.com/giovannimalcolm/).
