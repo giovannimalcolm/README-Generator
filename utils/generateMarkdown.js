@@ -37,16 +37,16 @@ var renderLicenseLink = (license) => {
 function renderLicenseSection (license) {
   switch (license) {
     case 'MIT':
-      return `${renderLicenseBadge(license)}, 
+      return `${renderLicenseBadge(license)}
        ${renderLicenseLink(license)}`
     case 'APACHE 2.0':
-      return `${renderLicenseBadge(license)},  
+      return `${renderLicenseBadge(license)}  
       ${renderLicenseLink(license)}`
     case 'GPL 3.0':
-      return `${renderLicenseBadge(license)},  
+      return `${renderLicenseBadge(license)} 
       ${renderLicenseLink(license)}`
     case 'BSD 3':
-      return `${renderLicenseBadge(license)},  
+      return `${renderLicenseBadge(license)} 
       ${renderLicenseLink(license)}`
     case 'None':
       return ''
@@ -56,9 +56,6 @@ function renderLicenseSection (license) {
 
 // TODO: Create a function to generate markdown for README
 const generateMarkdown = (answers) => {
-  
-
-
   return `# ${answers.title}
   ${renderLicenseSection(answers.license[0])}
 
@@ -94,7 +91,7 @@ ${answers.usage}
 
 ## License 
 
-${answers.license}
+This project is licensed under the ${answers.license} license.
 
 ## Contributing 
 
@@ -102,7 +99,11 @@ ${answers.contributing}
 
 ## Tests
 
+To run tests, run the following command:
+
+\`\`\`
 ${answers.tests}
+\`\`\`
 
 ## Questions
 
