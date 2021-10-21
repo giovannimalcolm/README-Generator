@@ -9,7 +9,7 @@ const util = require('util');
 // TODO: Create an array of questions for user input
 
 const promptUser = () => {
-    return inquirer.prompt([
+    .prompt([
       {
         type: 'input',
         name: 'username',
@@ -22,7 +22,7 @@ const promptUser = () => {
       },
       {
         type: 'input',
-        name: 'projectName',
+        name: 'title',
         message: 'What is your project\'s name?',
       },
       {
@@ -32,13 +32,13 @@ const promptUser = () => {
       },
       {
         type: 'checkbox',
-        name: 'license',
+        name: 'License',
         message: 'What kind of license should your project have?',
         choices: ['MIT','APACHE 2.0','GPL 3.0','BSD 3','None']
       },
       {
         type: 'input',
-        name: 'dependencies',
+        name: 'installation',
         message: 'What command should be run to install dependencies?',
       },
       {
@@ -48,15 +48,19 @@ const promptUser = () => {
       },
       {
         type: 'input',
-        name: 'repoUsage',
+        name: 'usage',
         message: 'What does the user need to know about using the repo?',
       },
       {
         type: 'input',
-        name: 'repoContribute',
+        name: 'contributing',
         message: 'What does the user need to know about contributing to the repo?',
       },
-    ]);
+    ])
+    .then((answers) => {
+        const readmeContent = writeToFile(fileName, answers)
+        
+    });
   };
 
 
@@ -65,14 +69,19 @@ const promptUser = () => {
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-
-
-
-
+    fs.writeFile(fileName, data, (err) =>
+    err ? console.log(err) : console.log('Successfully created index.html!')
+    );
 }
 
+
+
+
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    writeToFile(fileName, data);
+
+}
 
 // Function call to initialize app
 init();
